@@ -31,7 +31,7 @@ from create_luna_cubes import load_itk, resize_image
 from training_fns import normalize, denormalize
 from network import Refiner, EdgeKernel
 
-model_name = 'hlt_to_nod_50'
+model_name = 'hlt_to_nod_1'
 
 cur_dir = os.path.dirname(__file__)
 config_dir = os.path.join(cur_dir, '../configs/')
