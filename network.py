@@ -132,8 +132,6 @@ class EdgeKernel(nn.Module):
     def apply_mask(self, orig_sample, edit_sample):
         # Locate correct mask
         shape = orig_sample.shape[-3:]
-        print(self.shapes)
-        print(shape)
         shape = torch.tensor(shape, dtype=torch.int).view(1,3)
         indx = torch.nonzero(torch.sum(self.shapes==shape, dim=1)==3)
         mask = self.masks[indx]
