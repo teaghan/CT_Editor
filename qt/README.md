@@ -47,7 +47,9 @@ Move your CT scan (preferably in dicom format, although .mhd files work for part
 
 3. To create a new contour structure, type the name of your new structure in the box next to `Create Structure` and then press the `Create Structure` button.
 
-4. Now when you press on the image slice, points will appear that represent your new contour points. To make this easier, utilize the zoom button (the magnifying glass), although see the note under Step 4 to ensure you are able to continue select contour points.
+4. Now when you press on the image slice, points will appear that represent your new contour points. To make this easier, utilize the zoom button (the magnifying glass).
+
+    - Note that the selection of your points will not work if you have the zoom button (the magnifying glass) already selected; to correct for this simply press the zoom button again to deselect it.
 
 5. Once satisfied with your contours on each slice (scroll through to make sure), you can save this new scan along with the updated contour file using the `Save dcm` button. Here you will be prompted to create a `New Folder` that will enclose your dicom slices and the RT Structure file.
 
