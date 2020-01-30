@@ -4,8 +4,11 @@ A GUI created to interact with the trained network post-training.
 ## Dependencies
 
 -[PyQT5](https://www.riverbankcomputing.com/static/Docs/PyQt5/): See [here](https://www.metachris.com/2016/03/how-to-install-qt56-pyqt5-virtualenv-python3/#install-sip) for install instructions.
+
 -pydicom: `pip install pydicom`
+
 -SimpleITK: `pip install SimpleITK`
+
 -scikit image: `pip install scikit-image`
 
 
@@ -18,7 +21,7 @@ Move your CT scan (preferably in dicom format, although .mhd files work for part
   - If you are hoping to create a new dicom file with the structures, have your files formatted similar to the below path layout. Note that the RS.dcm file is the pre-existing RT structure file.
     
 <p align="left">
-  <img width="300" height="80" src="../figures/file_format.png">
+  <img width="1000" height="80" src="../figures/file_format.png">
 </p>
 
 ## Editing your CT ##
