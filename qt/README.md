@@ -18,15 +18,15 @@ A GUI created to interact with the trained network post-training.
 
 Move your CT scan (preferably in dicom format, although .mhd files work for part of the GUI) into the [ct_scans directectory](../data/ct_scans).
 
-  - If you are hoping to create a new dicom file with the structures, have your files formatted similar to the below path layout. Note that the RS.dcm file is the pre-existing RT structure file.
+    - If you are hoping to create a new dicom file with the structures, have your files formatted similar to the below path layout. Note that the RS.dcm file is the pre-existing RT structure file.
     
 <p align="left">
-  <img width="1000" height="80" src="../figures/file_format.png">
+  <img width="1000" height="200" src="../figures/file_format.png">
 </p>
 
 ## Editing your CT ##
 
-1. Open your Terminal and move to the [CT_Editor/qt directory](../data/ct_scans).
+1. Open your Terminal and move to the [CT_Editor/qt directory](.).
 
 2. Run the command `python main.py` and you will see a window open.
 
@@ -34,7 +34,7 @@ Move your CT scan (preferably in dicom format, although .mhd files work for part
 
 4. Another window will open allowing you to select a location (by selecting a location within the scan) and size of the cube (by using the scroll box labelled "Cube Side Length") that you would like to edit. 
 
-  - Note that the selection of your location will not work if you have the zoom button (the magnifying glass) already selected; to correct for this simply press the zoom button again to deselect it.
+    - Note that the selection of your location will not work if you have the zoom button (the magnifying glass) already selected; to correct for this simply press the zoom button again to deselect it.
 
 5. Once you have suitable cube location and size, the `Apply Edit` button will run the network on the selected cube and insert the edited version. If you are unhappy with the edit, simply press `Undo Edit` to remove this edit and try a different location and/or size.
 
