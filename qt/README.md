@@ -16,12 +16,11 @@ A GUI created to interact with the trained network post-training.
                                    
 ## Before Starting ##
 
-Move your CT scan (preferably in dicom format, although .mhd files work for part of the GUI) into the [ct_scans directectory](../data/ct_scans).
-
+Move your CT scan (preferably in dicom format, although .mhd files work for part of the GUI) into the [ct_scans directory](../data/ct_scans).
     - If you are hoping to create a new dicom file with the structures, have your files formatted similar to the below path layout. Note that the RS.dcm file is the pre-existing RT structure file.
     
 <p align="left">
-  <img width="1000" height="200" src="../figures/file_format.png">
+  <img width="1000" height="350" src="../figures/file_format.png">
 </p>
 
 ## Editing your CT ##
