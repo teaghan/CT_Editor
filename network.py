@@ -99,7 +99,7 @@ class EdgeKernel(nn.Module):
     def __init__(self, shapes, fade_perc=0.2, use_cuda=True):
         super(EdgeKernel, self).__init__()
 
-        self.shapes = torch.tensor(shapes)
+        self.shapes = torch.tensor(shapes).type(torch.IntTensor)
         self.masks = []
         for cnn_input_size in shapes:
 
@@ -128,10 +128,12 @@ class EdgeKernel(nn.Module):
             if use_cuda:
                 mask = mask.cuda()
             self.masks.append(mask)
-            
+    
     def apply_mask(self, orig_sample, edit_sample):
         # Locate correct mask
         shape = orig_sample.shape[-3:]
+        print(self.shapes)
+        print(shape)
         shape = torch.tensor(shape, dtype=torch.int).view(1,3)
         indx = torch.nonzero(torch.sum(self.shapes==shape, dim=1)==3)
         mask = self.masks[indx]
