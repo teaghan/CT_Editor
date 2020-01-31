@@ -13,7 +13,7 @@ This project aims to implement a method similar to [Improving the Realism of Syn
                                    
 ## Getting Started ##
 
-1. Download the training, validation, and test data from 
+1. Download the training, validation, and test data from __ and place them into the [data directory](./data).
     
 2. The model architecture and hyper-parameters are set within configuration file in [the config directory](./configs). For instance, I have already created the [base line configuration file](./configs/hlt_to_nod_1.ini). If creating a new model, I suggest copying this one and changing the parameters
   
