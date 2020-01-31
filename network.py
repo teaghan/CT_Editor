@@ -100,6 +100,9 @@ class EdgeKernel(nn.Module):
         super(EdgeKernel, self).__init__()
 
         self.shapes = torch.tensor(shapes).type(torch.IntTensor)
+        if use_cuda:
+            self.shapes = self.shapes.cuda()
+        
         self.masks = []
         for cnn_input_size in shapes:
 
