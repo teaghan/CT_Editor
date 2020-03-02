@@ -222,7 +222,9 @@ def load_model(model_name):
 
     # Create Edge Kernel to be applied to output of refiner
     # Collect all possible shapes
-    shapes = np.array([[8,24,24],[10,30,30],[12,36,36],[14,42,42],[16,48,48]]).astype(int)
+    #shapes = np.array([[8,24,24],[10,30,30],[12,36,36],[14,42,42],[16,48,48]]).astype(int)
+    shapes = np.array([[8,24,24],[10,30,30],[12,36,36],[14,42,42],[16,48,48],
+                       [18,54,54],[20,60,60],[22,66,66]]).astype(int)
     edgekernel = EdgeKernel(shapes, fade_perc=fade_perc, use_cuda=False)
 
     # BUILD THE NETWORK
@@ -416,6 +418,9 @@ class CTWindow(QDialog):
         # Cube size functionalities
         self.ui.cubelengthBox.valueChanged.connect(self.cube_size)
         self.cube_size()
+        self.ui.cubelengthBox.setMaximum(42.9)
+        _translate = QtCore.QCoreApplication.translate
+        self.ui.cubelenLabel.setText(_translate("CTDisplay", "Cube Side Length (15.6-42.9)mm:"))
         
         # Point selection functionality
         self.cid = self.ui.mpl_ct.canvas.fig.canvas.mpl_connect('button_press_event', self.onclick)
@@ -504,7 +509,8 @@ class CTWindow(QDialog):
                 
     def cube_size(self):
         # Reset to closest grid spacing
-        grid = np.arange(15.6, 31.2+3.9,3.9)
+        #grid = np.arange(15.6, 31.2+3.9,3.9)
+        grid = np.arange(15.6, 42.9+3.9, 3.9)
         self.ui.cubelengthBox.setValue(grid[np.argmin(np.abs(self.ui.cubelengthBox.value()-grid))])
         # Calculate the cube size in pixels
         z_side_length = np.rint(self.ui.cubelengthBox.value()/self.new_spacing[0]).astype(int)
