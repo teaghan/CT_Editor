@@ -7,6 +7,8 @@ Using adversarial learning to insert realistic looking tumours into pre-existing
 
 -h5py: `pip install h5py`
 
+-scipy: `pip install scipy`
+
 ## Adversarial Learning for CT Editing
 
 This project aims to implement a method similar to [Improving the Realism of Synthetic Images](https://machinelearning.apple.com/2017/07/07/GAN.html) in order to achieve the ability to take exisiting patient CT images and insert tumours into hand-chosen locations.
