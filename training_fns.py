@@ -2,6 +2,7 @@ import numpy as np
 import os
 import h5py
 import argparse
+from scipy import ndimage
 import torch
 from torch.autograd import Variable
 from torch.utils.data import Dataset
@@ -63,6 +64,28 @@ def denormalize(image, min_bound=-1000., max_bound=1500.):
     image = ((image + 1) * (max_bound - min_bound) / 2 ) + min_bound
     return image
 
+def random_perturb(Xbatch,rotate=False): 
+    # Apply some random transformations...
+    swaps = np.random.choice([-1,1],size=(3,))
+    Xcpy = Xbatch.copy()
+    Xcpy = Xbatch[:,::swaps[0],::swaps[1],::swaps[2]]
+    txpose = np.random.permutation([2,3])
+    Xcpy = np.transpose(Xcpy, tuple([0,1] + list(txpose)))
+    if rotate:
+        # Arbitrary rotation is composition of two
+        Xcpy[0] = ndimage.interpolation.rotate(Xcpy[0], 
+                                               np.random.uniform(-5, 5), 
+                                               axes=(1,0), order=1,
+                                               reshape=False, cval=-1000,
+                                               mode='nearest')
+        Xcpy[0] = ndimage.interpolation.rotate(Xcpy[0], 
+                                               np.random.uniform(-5, 5), 
+                                               axes=(2,1), order=1,
+                                               reshape=False, cval=-1000,
+                                               mode='nearest')
+            
+    return Xcpy
+
 class CTDataset(Dataset):
     
     """
@@ -79,7 +102,13 @@ class CTDataset(Dataset):
     
     def __getitem__(self, idx):
         with h5py.File(self.h5_file, "r") as f:
-            seg = torch.from_numpy(f['Segment'][idx].reshape(1, *f['Shape'][idx]).astype(np.float32))
+            # Load segment
+            seg = f['Segment'][idx].reshape(1, *f['Shape'][idx]).astype(np.float32)
+            # Apply random augmentation
+            seg = random_perturb(seg, rotate=True)
+            # Convert to torch tensor
+            seg = torch.from_numpy(seg.copy())
+            
         # Normalize between -1 and 1
         seg = normalize(seg)
             

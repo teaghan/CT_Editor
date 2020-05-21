@@ -3,13 +3,15 @@ A GUI created to interact with the trained network post-training.
 
 ## Dependencies
 
--[PyQT5](https://www.riverbankcomputing.com/static/Docs/PyQt5/): See [here](https://www.metachris.com/2016/03/how-to-install-qt56-pyqt5-virtualenv-python3/#install-sip) for install instructions.
+-[PyQT5](https://www.riverbankcomputing.com/static/Docs/PyQt5/): `pip install pyqt5`
 
 -pydicom: `pip install pydicom`
 
 -SimpleITK: `pip install SimpleITK`
 
 -scikit image: `pip install scikit-image`
+
+-psopy: `pip install psopy`
 
 
 ## Editing pre-exisiting CT scans to have tumours inserted in hand-chosen locations.

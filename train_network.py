@@ -1,3 +1,4 @@
+# added data augmentation
 # import packages
 from __future__ import absolute_import, division, print_function # python2 compatibility
 import numpy as np
@@ -54,9 +55,6 @@ if not os.path.exists(val_results_dir):
 
 if args.data_dir is None:
     data_dir = os.path.join(cur_dir, 'data/')
-
-print(config_dir+model_name+'.ini')
-print(model_name)
 
 # Model configuration
 config = configparser.ConfigParser()
