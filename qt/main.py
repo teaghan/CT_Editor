@@ -31,7 +31,7 @@ from create_luna_cubes import load_itk, resize_image
 from training_fns import normalize, denormalize
 from network import Refiner, EdgeKernel
 
-model_name = 'hlt_to_nod_4'
+model_name = 'hlt_to_nod_1'
 
 cur_dir = os.path.dirname(__file__)
 config_dir = os.path.join(cur_dir, '../configs/')
@@ -224,7 +224,8 @@ def load_model(model_name):
     # Collect all possible shapes
     #shapes = np.array([[8,24,24],[10,30,30],[12,36,36],[14,42,42],[16,48,48]]).astype(int)
     shapes = np.array([[8,24,24],[10,30,30],[12,36,36],[14,42,42],[16,48,48],
-                       [18,54,54],[20,60,60],[22,66,66]]).astype(int)
+                       [18,54,54],[20,60,60],[22,66,66],[24,72,72],[26,78,78],
+                       [28,84,84],[30,90,90]]).astype(int)
     edgekernel = EdgeKernel(shapes, fade_perc=fade_perc, use_cuda=False)
 
     # BUILD THE NETWORK
@@ -417,10 +418,14 @@ class CTWindow(QDialog):
         
         # Cube size functionalities
         self.ui.cubelengthBox.valueChanged.connect(self.cube_size)
+        #self.ui.cubelengthBox.setMaximum(42.9)
+        self.cube_max = self.ui.cubelengthBox.maximum()
+        self.cube_min = self.ui.cubelengthBox.minimum()
+        self.cube_step = self.ui.cubelengthBox.singleStep()
         self.cube_size()
-        self.ui.cubelengthBox.setMaximum(42.9)
+        
         _translate = QtCore.QCoreApplication.translate
-        self.ui.cubelenLabel.setText(_translate("CTDisplay", "Cube Side Length (15.6-42.9)mm:"))
+        #self.ui.cubelenLabel.setText(_translate("CTDisplay", "Cube Side Length (15.6-42.9)mm:"))
         
         # Point selection functionality
         self.cid = self.ui.mpl_ct.canvas.fig.canvas.mpl_connect('button_press_event', self.onclick)
@@ -429,7 +434,7 @@ class CTWindow(QDialog):
         self.seg_locations = []
         self.seg_boxsizes = []
         self.seg_old_data = []
-        
+                
     def timerEvent(self, event):
         self.killTimer(self.timer_id)
         self.timer_id = -1
@@ -510,7 +515,7 @@ class CTWindow(QDialog):
     def cube_size(self):
         # Reset to closest grid spacing
         #grid = np.arange(15.6, 31.2+3.9,3.9)
-        grid = np.arange(15.6, 42.9+3.9, 3.9)
+        grid = np.arange(self.cube_min, self.cube_max+self.cube_step, self.cube_step)
         self.ui.cubelengthBox.setValue(grid[np.argmin(np.abs(self.ui.cubelengthBox.value()-grid))])
         # Calculate the cube size in pixels
         z_side_length = np.rint(self.ui.cubelengthBox.value()/self.new_spacing[0]).astype(int)

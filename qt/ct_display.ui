@@ -81,7 +81,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Cube Side Length (15.6-31.2)mm:</string>
+    <string>Cube Side Length (15.6-46.8)mm:</string>
    </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">
@@ -283,7 +283,7 @@
        <double>15.600000000000000</double>
       </property>
       <property name="maximum">
-       <double>31.199999999999999</double>
+       <double>46.800000000000003</double>
       </property>
       <property name="singleStep">
        <double>3.900000000000000</double>
@@ -315,7 +315,7 @@
     <item>
      <widget class="QLabel" name="pixellimsLabel">
       <property name="text">
-       <string>Pixel Limits</string>
+       <string>HU Limits</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -380,7 +380,7 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>760</x>

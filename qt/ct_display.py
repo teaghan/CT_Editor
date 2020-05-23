@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ct_display_new.ui'
+# Form implementation generated from reading ui file 'ct_display.ui'
 #
-# Created by: PyQt5 UI code generator 5.12.3
+# Created by: PyQt5 UI code generator 5.14.2
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -126,7 +126,7 @@ class Ui_CTDisplay(object):
         self.cubelengthBox = QtWidgets.QDoubleSpinBox(self.layoutWidget3)
         self.cubelengthBox.setDecimals(1)
         self.cubelengthBox.setMinimum(15.6)
-        self.cubelengthBox.setMaximum(31.2)
+        self.cubelengthBox.setMaximum(46.800000000000004)
         self.cubelengthBox.setSingleStep(3.9)
         self.cubelengthBox.setObjectName("cubelengthBox")
         self.horizontalLayout_4.addWidget(self.cubelengthBox)
@@ -170,19 +170,19 @@ class Ui_CTDisplay(object):
         self.statusLabel.setText("")
         self.statusLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.statusLabel.setObjectName("statusLabel")
-        self.widget = QtWidgets.QWidget(CTDisplay)
-        self.widget.setGeometry(QtCore.QRect(760, 530, 140, 100))
-        self.widget.setObjectName("widget")
-        self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.widget)
+        self.layoutWidget5 = QtWidgets.QWidget(CTDisplay)
+        self.layoutWidget5.setGeometry(QtCore.QRect(760, 530, 140, 100))
+        self.layoutWidget5.setObjectName("layoutWidget5")
+        self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.layoutWidget5)
         self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_8.setObjectName("verticalLayout_8")
-        self.saveButton = QtWidgets.QPushButton(self.widget)
+        self.saveButton = QtWidgets.QPushButton(self.layoutWidget5)
         self.saveButton.setObjectName("saveButton")
         self.verticalLayout_8.addWidget(self.saveButton)
-        self.segmentButton = QtWidgets.QPushButton(self.widget)
+        self.segmentButton = QtWidgets.QPushButton(self.layoutWidget5)
         self.segmentButton.setObjectName("segmentButton")
         self.verticalLayout_8.addWidget(self.segmentButton)
-        self.closeButton = QtWidgets.QPushButton(self.widget)
+        self.closeButton = QtWidgets.QPushButton(self.layoutWidget5)
         self.closeButton.setObjectName("closeButton")
         self.verticalLayout_8.addWidget(self.closeButton)
 
@@ -194,7 +194,7 @@ class Ui_CTDisplay(object):
         CTDisplay.setWindowTitle(_translate("CTDisplay", "CT Editor"))
         self.displayButton.setText(_translate("CTDisplay", "Display"))
         self.pixelsLabel.setText(_translate("CTDisplay", "Pixels"))
-        self.cubelenLabel.setText(_translate("CTDisplay", "Cube Side Length (15.6-31.2)mm:"))
+        self.cubelenLabel.setText(_translate("CTDisplay", "Cube Side Length (15.6-46.9)mm:"))
         self.cubelocLabel.setText(_translate("CTDisplay", "Cube location:"))
         self.xTopLabel.setStatusTip(_translate("CTDisplay", "0"))
         self.xTopLabel.setText(_translate("CTDisplay", "x"))
@@ -206,7 +206,7 @@ class Ui_CTDisplay(object):
         self.sliceLabel.setText(_translate("CTDisplay", "y-slice:"))
         self.slice.setText(_translate("CTDisplay", "60"))
         self.mmLabel.setText(_translate("CTDisplay", "mm"))
-        self.pixellimsLabel.setText(_translate("CTDisplay", "Pixel Limits"))
+        self.pixellimsLabel.setText(_translate("CTDisplay", "HU Limits"))
         self.vminLabel.setText(_translate("CTDisplay", "Min:"))
         self.vmaxLabel.setText(_translate("CTDisplay", "Max:"))
         self.vmin.setText(_translate("CTDisplay", "-400"))
