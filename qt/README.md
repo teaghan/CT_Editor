@@ -1,7 +1,23 @@
 # CT Editor Graphical Interface
 A GUI created to interact with the trained network post-training.
 
+## Python Compatibility
+
+-This code has been tested using [Python3.7.7](https://www.python.org/downloads/release/python-377/) and is known to be **not compatible with versions below Python 3.6**, however, other versions will likely work.
+
 ## Dependencies
+
+Depending on your pip installation, you may have to replace `pip` with `pip3` in the below installations
+
+-[numpy](https://numpy.org/): `pip install numpy`
+
+-[matplotlib](https://matplotlib.org/): `pip install matplotlib`
+
+-h5py: `pip install h5py`
+
+-[pandas](https://pandas.pydata.org/): `pip install pandas` 
+
+-[PyTorch](http://pytorch.org/): `pip install torch torchvision`
 
 -[PyQT5](https://www.riverbankcomputing.com/static/Docs/PyQt5/): `pip install pyqt5`
 
@@ -12,6 +28,16 @@ A GUI created to interact with the trained network post-training.
 -scikit image: `pip install scikit-image`
 
 -psopy: `pip install psopy`
+
+-scipy: `pip install scipy`
+
+# Memory Issues
+
+3D convolutional neural networks (which is what the editor network is) are beasts and therefore, running an operation using one of these can be very computationally expensive. This problem is magnified if you use a large segment size. For instance, on my mac, I receive many memory warnings if I try to edit a cube that is larger than 39mm<sup>3</sup>. Therefore, unless you are using a powerful machine, I suggest limiting the size of the edits to smaller segments. As a reference, my machine specs are:
+
+MacBook Air (Retina, 13-inch, 2018)
+Processor 1.6 GHz Intel Core i5
+Memory 8 GB 2133 MHz LPDDR3
 
 
 ## Editing pre-exisiting CT scans to have tumours inserted in hand-chosen locations.
