@@ -3,7 +3,7 @@ A GUI created to interact with the trained network post-training.
 
 ## Python Compatibility
 
--This code has been tested using [Python3.7.7](https://www.python.org/downloads/release/python-377/) and is known to be **not compatible with versions below Python 3.6**, however, other versions will likely work.
+This code has been tested using [Python 3.7.7](https://www.python.org/downloads/release/python-377/) and is known to be **not compatible with versions below Python 3.6**, however, other versions will likely work.
 
 ## Dependencies
 
@@ -36,7 +36,9 @@ Depending on your pip installation, you may have to replace `pip` with `pip3` in
 3D convolutional neural networks (which is what the editor network is) are beasts and therefore, running an operation using one of these can be very computationally expensive. This problem is magnified if you use a large segment size. For instance, on my mac, I receive many memory warnings if I try to edit a cube that is larger than 39mm<sup>3</sup>. Therefore, unless you are using a powerful machine, I suggest limiting the size of the edits to smaller segments. As a reference, my machine specs are:
 
 MacBook Air (Retina, 13-inch, 2018)
+
 Processor 1.6 GHz Intel Core i5
+
 Memory 8 GB 2133 MHz LPDDR3
 
 
@@ -57,7 +59,7 @@ Move your CT scan (preferably in dicom format, although .mhd files work for part
 
 2. Run the command `python main.py` and you will see a window open.
 
-3. Locate your CT scan and select `Load Scan`.
+3. Locate your CT scan (or dicom directory) and select `Load Scan`.
 
 4. Another window will open allowing you to select a location (by selecting a location within the scan) and size of the cube (by using the scroll box labelled "Cube Side Length") that you would like to edit. 
 
