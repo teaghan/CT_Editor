@@ -31,6 +31,23 @@ Depending on your pip installation, you may have to replace `pip` with `pip3` in
 
 -scipy: `pip install scipy`
 
+# Citing this work
+
+Checkout our [Technical Note](https://aapm.onlinelibrary.wiley.com/doi/abs/10.1002/mp.14437). When using this tool, please consider citing this work. For example, here's the BibTeX:
+
+```
+@article{OBriain2020,
+  doi = {10.1002/mp.14437},
+  url = {https://doi.org/10.1002/mp.14437},
+  year = {2020},
+  month = aug,
+  publisher = {Wiley},
+  author = {Teaghan B. O{\textquotesingle}Briain and Kwang Moo Yi and Magdalena Bazalova-Carter},
+  title = {Technical Note: Synthesizing of lung tumors in computed tomography images},
+  journal = {Medical Physics}
+}
+```
+
 # Memory Issues
 
 3D convolutional neural networks (which is what the editor network is) are beasts and therefore, running an operation using one of these can be very computationally expensive. This problem is magnified if you use a large segment size. For instance, on my mac, I receive many memory warnings if I try to edit a cube that is larger than 39mm<sup>3</sup>. Therefore, unless you are using a powerful machine, I suggest limiting the size of the edits to smaller segments. As a reference, my machine specs are:
