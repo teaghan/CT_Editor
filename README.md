@@ -29,7 +29,7 @@ This project aims to implement a method similar to [Improving the Realism of Syn
 
 ## Citing this work
 
-Checkout our [Technical Note](https://aapm.onlinelibrary.wiley.com/doi/abs/10.1002/mp.14437). When using this tool, please consider citing this work. For example, here's the BibTeX:
+Checkout our [Technical Note](https://aapm.onlinelibrary.wiley.com/doi/abs/10.1002/mp.14437). When using this tool, please consider citing our work. For example, here's the BibTeX:
 
 ```
 @article{OBriain2020,
