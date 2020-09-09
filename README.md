@@ -24,3 +24,22 @@ This project aims to implement a method similar to [Improving the Realism of Syn
 4. The [Analysis notebook](./evaluate_samples.ipynb) allows for the evaluation of the network throughout the training process
 
 5. The developed [GUI](./qt/) can be used to easily interact with the editor network.
+
+
+
+## Citing this work
+
+Checkout our [Technical Note](https://aapm.onlinelibrary.wiley.com/doi/abs/10.1002/mp.14437). When using this tool, please consider citing this work. For example, here's the BibTeX:
+
+```
+@article{OBriain2020,
+  doi = {10.1002/mp.14437},
+  url = {https://doi.org/10.1002/mp.14437},
+  year = {2020},
+  month = aug,
+  publisher = {Wiley},
+  author = {Teaghan B. O{\textquotesingle}Briain and Kwang Moo Yi and Magdalena Bazalova-Carter},
+  title = {Technical Note: Synthesizing of lung tumors in computed tomography images},
+  journal = {Medical Physics}
+}
+```
